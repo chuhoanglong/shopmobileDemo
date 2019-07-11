@@ -1,0 +1,382 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  background-color: #f9f9f9e0;
+}
+
+.wrapper .header {
+  z-index: 2;
+}
+
+.wrapper .container {
+  margin-left: 0;
+  padding: 0;
+  height: 1430px;
+}
+.wrapper .page{
+  height: 50px;
+}
+.items {
+  position: relative;
+  width: 440px;
+  height: 350px;
+  background-size: center;
+  background-position: center;
+  border: 1px solid #FFF;
+  border-style: dotted;
+}
+
+.items img {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #AAA;
+  transform: scale(0.3);
+  transition: all 0.5s;
+  --transition-delay: 1s;
+  opacity: 0;
+}
+
+.overlay:hover {
+  opacity: 1;
+  transform: scale(0.8);
+}
+
+/*CSS for menu*/
+.menu {
+  display: flex;
+  top: 10px;
+  width: 100%;
+  height: 100px;
+  flex-flow: row;
+  flex-wrap: wrap-reverse;
+  padding: 8px 16px;
+  justify-content: flex-start;
+  position: fixed;
+  background-color: #ffffffd1;
+  opacity: 1;
+}
+
+.hasmenu a {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  color: #AAA;
+}
+
+.hasmenu:hover a {
+  font-weight: bold;
+  color: #333;
+}
+
+/*CSS for iconmenu with width max 700px*/
+.iconmenu {
+  opacity: 0;
+}
+
+@media (max-width:700px) {
+  .iconmenu {
+    position: fixed;
+    display: flex;
+  }
+
+  .iconmenu .opClass a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #AAA;
+  }
+
+  .iconmenu .opClass li:hover a {
+    color: #333;
+    font-size: 1.3em;
+  }
+
+  .iconmenu .opClass ul li {
+    list-style: none;
+    line-height: 2em;
+    background-color: #FFF;
+  }
+
+  .iconmenu .icon {
+    justify-content: flex-end;
+  }
+
+  .iconmenu .icon #buttonMenu {
+    border: 0;
+    background-color: #ffffffd1;
+  }
+
+  .menu {
+    opacity: 0;
+  }
+
+  .iconmenu {
+    opacity: 1;
+  }
+
+  .iconmenu .submenu {
+    background-color: white;
+    opacity: 0;
+  }
+
+  .opClass {
+    opacity: 1;
+  }
+}
+
+/*CSS for footer*/
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+  color: #AAA;
+}
+
+.footer .iconFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .iconFooter .fab {
+  padding: 8px 16px;
+}
+
+.footer .members {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  left: 0;
+}
+
+.container-fluid {
+  margin-top: 120px;
+}
+
+.product-gallery-thumb img {
+  cursor: pointer;
+  background-color: #f7f7f8;
+  width: 100%;
+  height: 54px;
+}
+
+.product-gallery-thumb .product-gallery-thumb-placeholder {
+  background-color: #f3f3f3;
+  display: block;
+  transition: opacity 150ms linear, color 150ms linear, background 150ms linear;
+}
+
+.product-gallery__thumb:hover {
+  border-color: #a3a5a7;
+}
+
+.product-gallery-thumb-placeholder:hover, .product-gallery-thumb-placeholder:focus {
+  border: 1px solid black;
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+}
+
+.quantity-area input.qty-btn {
+  float: left;
+  background: #f5f5f5;
+  border: solid 1px #f5f5f5;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  outline: none;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  border-radius: 0;
+}
+
+button.btn-addtocart {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: none;
+  padding: 14px 35px;
+  line-height: 22px;
+  width: 90%;
+  background-color: #000;
+  color: white;
+  border: 0px;
+}
+
+button.btn-addtocart:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+/* IDEA: CSS for info item */
+.infoItem {
+  position: relative;
+  margin-top: 110px;
+  display: flex;
+  flex-direction: row;
+}
+
+.infoItem .imageMore {}
+
+.infoItem .imageMore img {
+  width: 100px;
+  padding: 2px 4px;
+}
+
+.infoItem .imageMaster {}
+
+.infoItem .imageMaster img {
+  width: 350px;
+  height: 350px;
+}
+
+.infoItem .itemId {
+  width: 30%;
+  margin: 0;
+  padding: 8px 16px;
+  line-height: 15px;
+}
+
+.infoItem .specifications {
+  position: absolute;
+  width: 30%;
+  right: 100px;
+}
+
+/*CSS for menu*/
+.menu {
+  display: flex;
+  top: 10px;
+  width: 100%;
+  height: 100px;
+  flex-flow: row;
+  flex-wrap: wrap-reverse;
+  padding: 8px 16px;
+  justify-content: flex-start;
+  position: fixed;
+  background-color: #ffffffd1;
+  opacity: 1;
+}
+
+.hasmenu a {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  color: #AAA;
+}
+
+.hasmenu:hover a {
+  font-weight: bold;
+  color: #333;
+}
+
+/*CSS for iconmenu with width max 700px*/
+.iconmenu {
+  opacity: 0;
+}
+
+@media (max-width:700px) {
+  .iconmenu {
+    position: fixed;
+    display: flex;
+  }
+
+  .iconmenu .opClass a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #AAA;
+  }
+
+  .iconmenu .opClass li:hover a {
+    color: #333;
+    font-size: 1.3em;
+  }
+
+  .iconmenu .opClass ul li {
+    list-style: none;
+    line-height: 2em;
+    background-color: #FFF;
+  }
+
+  .iconmenu .icon {
+    justify-content: flex-end;
+  }
+
+  .iconmenu .icon #buttonMenu {
+    border: 0;
+    background-color: #ffffffd1;
+  }
+
+  .menu {
+    opacity: 0;
+  }
+
+  .iconmenu {
+    opacity: 1;
+  }
+
+  .iconmenu .submenu {
+    background-color: white;
+    opacity: 0;
+  }
+
+  .opClass {
+    opacity: 1;
+  }
+}
+
+.quantity-area input.qty-btn {
+  float: left;
+  background: #f5f5f5;
+  border: solid 1px #f5f5f5;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  outline: none;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  border-radius: 0;
+}
+
+button.btn-addtocart {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: none;
+  padding: 14px 35px;
+  line-height: 22px;
+  width: 90%;
+  background-color: #000;
+  color: white;
+  border: 0px;
+}
+
+button.btn-addtocart:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid;
+  border-color: #000000;
+}

@@ -1,0 +1,121 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  link(rel='stylesheet', href='grid.css')
+  link(rel='stylesheet', href='component.css')
+  link(href='https://fonts.googleapis.com/css?family=Quicksand&display=swap', rel='stylesheet')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+  title Document
+.wrapper
+  .header
+    .menu
+      .hasmenu
+        a(href='/Home') Home
+      .hasmenu
+        a(href='#') Profile
+      .hasmenu
+        a(href='/Home/Apple') Apple
+      .hasmenu
+        a(href='/Home/SamSung') SamSung
+      .hasmenu
+        a(href='/Home/Ipad') Ipad
+      .hasmenu
+        a(href='/Home/Laptop') Laptop
+      .hasmenu
+        a(href='/cart') Cart
+          i.fas.fa-shopping-cart.fa-sm
+          sup=count
+      .login(style="position:relative;left:50%")
+        if(!user.name)
+          a(href='/login') Login        
+        else
+          a(href='#')=user.name
+          br
+          a(href='/login') Logout
+    .iconmenu
+      .icon
+        button#buttonMenu(type='button')
+          i.fas.fa-bars.fa-2x
+      #submenu.submenu
+        ul
+          li
+            a(href='/Home') Home
+          li
+            a(href='#') Profile
+          li
+            a(href='#') Apple
+          li
+            a(href='#') SamSung
+          li
+            a(href='#') Ipad
+          li
+            a(href='#') Laptop
+    
+  .container    
+      each item in items
+        a(href='/Home/' + item.code  , style='text-decoration:none')
+          .items
+            img(src=item.image, width='440px' height='350px')
+            .overlay
+              h4=item.name_item
+              
+  .page  
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        li.page-item
+          a.page-link(href='#', aria-label='Previous')
+            span(aria-hidden='true') &laquo;
+        li.page-item
+          a.page-link(href='/Home/?page=1') 1
+        li.page-item
+          a.page-link(href='/Home/?page=2') 2
+        li.page-item
+          a.page-link(href='/Home/?page=3') 3
+        li.page-item
+          a.page-link(href='/Home/?page', aria-label='Next')
+            span(aria-hidden='true') &raquo;
+
+  
+      
+  .footer
+    .members
+      h3 Group Members
+      h6
+        |            Nguyen Van Tu
+        br
+        br
+        |             Nghiem Linh Son
+        br
+        br
+        |             Pham Ngoc Thach
+        br
+        br
+        |             Duong Duc Luong
+        br
+        br
+        |             Chu Hoang Long
+    .iconFooter
+      div
+        i.fab.fa-facebook-square.fa-3x
+      div
+        i.fab.fa-instagram.fa-3x
+      div
+        i.fab.fa-behance.fa-3x
+      div
+        i.fab.fa-twitter-square.fa-3x
+script(type='text/javascript').
+  var buttonMenu = document.getElementById('buttonMenu');
+  var submenu = document.getElementById('submenu');
+  var count = 0;
+  buttonMenu.addEventListener("click", checkClick);
+  function checkClick(){
+  count++;
+  if (count % 2 === 0) {
+  submenu.className = "submenu";
+  }else {
+  submenu.className = "opClass";
+  }
+  }

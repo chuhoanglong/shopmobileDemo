@@ -1,0 +1,67 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  link(rel='stylesheet', href='grid.css')
+  link(rel='stylesheet', href='component.css')
+  link(rel='stylesheet', href='style/style.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&display=swap')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+  
+  title Pay Buy
+body
+  .wrapper(style='height:auto')
+    .header
+      .menu
+        .hasmenu
+          a(href='/Home') Home
+        .hasmenu
+          a(href='#') Profile
+        .hasmenu
+          a(href='#') Apple
+        .hasmenu
+          a(href='#') SamSung
+        .hasmenu
+          a(href='#') Ipad
+        .hasmenu
+          a(href='#') Laptop
+        .hasmenu
+          a(href='/cart') Cart
+            i.fas.fa-shopping-cart.fa-sm
+            sup=count
+        .login(style="position:relative;left:50%")
+          if(!user)
+            a(href='/login') Login        
+          else
+            a(href='#')=user.name
+            br
+            a(href='/login') Logout 
+  .container.payBuy
+    form()
+      .form-row
+        .form-group.col-md-6
+          label(for='inputEmail4') Email
+          input#inputEmail4.form-control(type='email', placeholder='Email')
+        .form-group.col-md-6
+          label(for='inputPassword4') First And Last Name
+          input#inputPassword4.form-control(type='password', placeholder='FULL NAME')
+        .form-group
+          label(for='inputAddress') Address
+          input#inputAddress.form-control(type='text', placeholder='1234 Main St')
+        .form-group
+          label(for='inputAddress2') Address 2
+          input#inputAddress2.form-control(type='text', placeholder='Apartment, studio, or floor')
+        .form-row
+          .form-group.col-md-6
+            label(for='inputCity') City
+            input#inputCity.form-control(type='text')
+          .form-group.col-md-4
+            label(for='inputState') State
+            select#inputState.form-control
+              option(selected='Online') Online
+              option(selected='COD') COD
+              option(selected='') PayPal
+      button.btn.btn-primary(type='submit') Authenticate
+            

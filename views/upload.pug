@@ -1,0 +1,63 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  link(rel='stylesheet', href='grid.css')
+  link(rel='stylesheet', href='component.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&display=swap')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+  title Upload
+body
+  form(action='/upload', method='post', enctype="multipart/form-data")
+    div.describe.card.border-light.mb-3
+      div.card-header Thông Tin Chi Tiết
+      ul.list-group.list-group-flush
+        li.list-group-item
+          h6.card-title Tiêu đề:
+          input(type='text', name='name_item')
+        li.list-group-item
+          h6.card-title Mã sản phẩm:
+          input(type='text',name='id') 
+        li.list-group-item
+          h6.card-title Chuyên mục:
+          select(name='classify', multiple='multiple')
+            option(selected='selected', value='Apple') Apple
+            option(selected='selected', value='Apple Watch') Apple Watch 
+            option(selected='selected', value='SamSung') SamSung
+            option(selected='selected', value='OPPO') OPPO
+            option(selected='selected', value='MacBook') MacBook 
+            option(selected='selected', value='Tai Nghe') Tai Nghe 
+            option(selected='selected', value='Nokia') Nokia 
+            option(selected='selected', value='VSmart') VSmart 
+            option(selected='selected', value='Laptop') Laptop 
+            option(selected='selected', value='Ipad') Ipad
+        li.list-group-item
+          h6.card-title Giá sản phẩm:
+          input(type='number',name='price_item',min='1000' placeholder='1000 VND')     
+        li.list-group-item
+          h6.card-title Ảnh hiển thị:
+          input(type='file', name='photos')   
+        li.list-group-item
+          h6.card-title Mô tả:
+          textarea(rows="5",cols="50",name='note')       
+        li.list-group-item
+          h6.card-title Thao Tác:
+          button(type='submit',name='accept') Accept
+          button(type='reset',name='reset') Reset
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          

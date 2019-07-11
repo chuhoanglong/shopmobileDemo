@@ -1,0 +1,68 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  link(rel='stylesheet', href='grid.css')
+  link(rel='stylesheet', href='component.css')
+  link(rel='stylesheet', href='style/style.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&display=swap')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+  
+  title Cart
+body
+  .wrapper(style='height:auto')
+    .header
+      .menu
+        .hasmenu
+          a(href='/Home') Home
+        .hasmenu
+          a(href='#') Profile
+        .hasmenu
+          a(href='/Home/Apple') Apple
+        .hasmenu
+          a(href='/Home/SamSung') SamSung
+        .hasmenu
+          a(href='/Home/Ipad') Ipad
+        .hasmenu
+          a(href='/Home/Laptop') Laptop
+        .hasmenu
+          a(href='/cart') Cart
+            i.fas.fa-shopping-cart.fa-sm
+            sup=count
+        .login(style="position:relative;left:50%")
+          if(!user)
+            a(href='/login') Login        
+          else
+            a(href='#')=user.name
+            br
+            a(href='/login') Logout
+  .container.infoCart
+      h3.titleCart Thông Tin Giỏ Hàng Của Bạn
+      if carts
+        form(action='/paybuy', method='GET')
+          each product in carts
+            .row.itemCart
+              .col-sm-2
+                img(src=product.image,width='64px')
+              .col-sm-10
+                h6=product.name_item
+                .row
+                  .col-sm-4.price
+                    h5 Đơn giá: 
+                      h6=product.price_item + ' VND'
+                  .col-sm-3.quantity
+                    h5 SL:
+                    div
+                      input.quantity-selector#quantity(type='number',name='quantity', disabled = true,min=1,value=product.count,style='text-align: center; width: 50px')              
+                  .col-sm-4.price
+                    h5 Thành tiền:
+                      h6.sumpri=product.price_item*product.count + ' VND'
+                  .col-dm-1
+                    button.qty-btn#remove(type='button')
+                      i.fas.fa-trash
+          .sumPrice
+            h5 Tổng :
+              h6=sumPrice + 'VND'
+          button.btn.btn-secondary Thanh Toán        

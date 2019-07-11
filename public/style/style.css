@@ -1,0 +1,109 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+.container .content{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  height:500px;
+  border: 1px solid black;
+
+}
+.container .logo{
+  position: relative;
+  top: 30px;
+  padding: 8px 16px;
+  width: 190px;
+  border: 1px solid #DDD;
+  background: linear-gradient(90deg, rgba(75,75,75,1) 0%, rgba(255,254,250,1) 100%);
+  box-shadow: 0px 1px 3px 3px rgba(0,0,0,0.1);
+
+}
+.container .content .login{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+.container .content .login .btn{
+  box-shadow: 0px 1px 3px 3px rgba(0,0,0,0.2);
+}
+.container .content .login .forgetPass{
+  position: absolute;
+  top: 290px;
+}
+
+/** CSS for cart */
+.infoCart{
+  display: flex;
+  flex-direction: column;
+  margin-top: 110px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 3px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  color: rgb(139, 139, 139)
+}
+.infoCart .titleCart{
+  color: rgb(252, 252, 252);
+  text-align: center;
+  width: 100%;
+  height:40px;
+  background-color: rgb(184, 184, 184)
+}
+.infoCart .itemCart{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 0;
+}
+.infoCart .itemCart .price{
+  display: flex;
+  flex-direction: row;
+}
+.infoCart .itemCart .quantity{
+  display: flex;
+  flex-direction: row;
+}
+.infoCart .itemCart .quantity #quantity{
+  height: 25px;
+  margin: 0 0 5px 5px;
+}
+.infoCart .itemCart .price h5{
+  order: 0;
+}
+.infoCart .itemCart .price h6{
+  order: 1;
+  padding: 4px 0 0 4px;
+  color: rgb(235, 110, 120)
+}
+.infoCart .itemCart #remove{
+
+}
+.infoCart .sumPrice{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+.infoCart .sumPrice h6{
+
+  order: 1;
+  padding: 4px 0 0 4px;
+
+  color: rgb(235, 110, 120);
+}
+
+ /* CSS payBuy */
+.payBuy{
+  margin-top:110px;
+  display: flex;
+  flex-direction: column;
+}
