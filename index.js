@@ -48,6 +48,9 @@ var cartRouter = require('./Router/cart.router');
 app.use('/', cartRouter);
 var cartMiddleware = require('./middleware/cart.middleware');
 
+var routerProduct = require('./api/router/router.product');
+app.use('/',routerProduct);
+
 // Router process login
 app.post('/login', loginController.loginController);
 app.get('/login', function(req, res) {
