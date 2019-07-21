@@ -30,10 +30,6 @@ mongoose.connect('mongodb://localhost/test', {
   useNewUrlParser: true
 });
 
-
-// data of dblow
-var db = require('./db/lowdb');
-
 // require component controller
 var loginController = require('./controllers/login.controller');
 var uploadController = require('./controllers/upload.controller')
