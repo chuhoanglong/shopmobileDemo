@@ -30,10 +30,6 @@ mongoose.connect('mongodb://localhost/test', {
   useNewUrlParser: true
 });
 
-
-// data of dblow
-var db = require('./db/lowdb');
-
 // require component controller
 var loginController = require('./controllers/login.controller');
 var uploadController = require('./controllers/upload.controller')
@@ -47,6 +43,9 @@ var loginMiddleware = require('./middleware/login.middleware');
 var cartRouter = require('./Router/cart.router');
 app.use('/', cartRouter);
 var cartMiddleware = require('./middleware/cart.middleware');
+
+var routerProduct = require('./api/router/router.product');
+app.use('/',routerProduct);
 
 // Router process login
 app.post('/login', loginController.loginController);

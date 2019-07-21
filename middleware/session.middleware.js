@@ -14,8 +14,7 @@ module.exports = function(req, res, next) {
         count: null
       }]
     });
-
-
+    console.log("session bị bỏ qua");
   }
   next();
 }
